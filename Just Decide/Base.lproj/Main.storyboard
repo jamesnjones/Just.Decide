@@ -10,7 +10,7 @@
         <!--Just Decide-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Just_Decide" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Just_Decide" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,7 +41,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7k-Va-za0">
                                 <rect key="frame" x="65" y="767" width="285" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -60,7 +60,6 @@
                             <constraint firstItem="E7f-Y9-egk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="3" id="DfC-aZ-QcX"/>
                             <constraint firstItem="qyp-d4-f3D" firstAttribute="centerX" secondItem="E7f-Y9-egk" secondAttribute="centerX" id="EBb-bQ-hL2"/>
                             <constraint firstItem="2Gg-sQ-8zH" firstAttribute="leading" secondItem="E7f-Y9-egk" secondAttribute="leading" constant="16" id="EGt-qe-Okp"/>
-                            <constraint firstItem="h7k-Va-za0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G4v-8s-yy6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="E7f-Y9-egk" secondAttribute="trailing" constant="3" id="HVI-Oy-ffE"/>
                             <constraint firstItem="vqm-Qv-byG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="65" id="Lcb-2d-h4d"/>
                             <constraint firstItem="2Gg-sQ-8zH" firstAttribute="centerY" secondItem="E7f-Y9-egk" secondAttribute="centerY" constant="-11" id="NDS-HT-969"/>
@@ -110,7 +109,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Wzc-wa-KoV">
-                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="separatorColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -152,12 +151,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iJl-bI-nCe"/>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="XTX-ht-Rb4">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="6x4-SG-bRF">
-                            <connections>
-                                <action selector="backButton:" destination="DYY-SN-lBb" id="X3G-so-VFW"/>
-                            </connections>
-                        </barButtonItem>
+                    <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="never" id="XTX-ht-Rb4">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="YKG-bK-SpD">
                             <connections>
                                 <action selector="addButtonPressed:" destination="DYY-SN-lBb" id="WmQ-9R-hOD"/>
@@ -249,7 +243,6 @@
         <!--Navigation Controller-->
         <scene sceneID="Oaz-fX-uS9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RhA-Dz-Fej" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JpD-aw-f4V" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="blackTranslucent" largeTitles="YES" id="bt5-RS-lJr">
@@ -264,6 +257,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="krR-EY-SaO"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RhA-Dz-Fej" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>

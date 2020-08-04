@@ -37,7 +37,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     override func viewWillAppear(_ animated: Bool) {
           super.viewWillAppear(animated)
         
-        print("apeearrrred")
+        print("check")
+        
         slices = getSlices()
           spinningWheel.slices = slices
                    spinningWheel.equalSlices = true
@@ -56,12 +57,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
                        }
                   
                    }
-         
+        
       }
     
     
     
-    func getSlices() -> [CarnivalWheel] {
+   private func getSlices() -> [CarnivalWheel] {
         PersistenceManager.retrieveSlices { [weak self] result in
             guard let self = self else {return}
             

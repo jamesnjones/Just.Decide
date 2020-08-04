@@ -18,7 +18,7 @@ class EditVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     
-        getSlices()
+       getSlices()
         
     }
     
@@ -30,8 +30,8 @@ class EditVC: UIViewController {
         
     }
     
-    func getSlices() {
-        PersistenceManager.retrieveSlices { [weak self ]result in
+   private func getSlices()  {
+        PersistenceManager.retrieveSlices { [weak self] result in
             guard let self = self else {return}
             
             switch result {
@@ -43,12 +43,14 @@ class EditVC: UIViewController {
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
+                   
                 }
                 
             case .failure(let error):
                 print("Edit VC Errror ")
             }
         }
+    
     }
 
     
@@ -80,10 +82,6 @@ class EditVC: UIViewController {
         
     }
 
-    @IBAction func backButton(_ sender: UIBarButtonItem) {
-        
-    }
-    
    
 }
 

@@ -38,6 +38,7 @@ enum PersistenceManager {
                 case .remove:
                     obtainedSlice.removeAll {$0.title == slice.title}
                 }
+                
                 completed(save(slices: obtainedSlice))
                 
             case .failure(_):
