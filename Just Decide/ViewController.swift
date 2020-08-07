@@ -29,20 +29,19 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
        
         
         self.navigationController?.delegate = self
-        
-        
         spinningWheel.initialDrawingOffset = 270.0
-        }
+        
+    }
     
     override func viewWillAppear(_ animated: Bool) {
           super.viewWillAppear(animated)
-        
-        print("check")
-        
+       
         slices = getSlices()
+        spinningWheel.setNeedsDisplay()
+        spinningWheel.setNeedsLayout()
           spinningWheel.slices = slices
                    spinningWheel.equalSlices = true
-                   spinningWheel.frameStroke.width = 0
+                   spinningWheel.frameStroke.width = 1
                    spinningWheel.titleRotation = CGFloat.pi
                    spinningWheel.slices.enumerated().forEach { (pair) in
                        let slice = pair.element as! CarnivalWheel
@@ -58,8 +57,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
                   
                    }
         
-      }
-    
+    }
     
     
    private func getSlices() -> [CarnivalWheel] {
@@ -81,6 +79,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
                 print("Edit VC Errror ")
             }
         }
+    
         return slices
        
     }
@@ -90,12 +89,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         super.didReceiveMemoryWarning()
     }
     
+    
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-          true
       }
       
       func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-          true
       }
     
     

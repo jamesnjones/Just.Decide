@@ -17,5 +17,4 @@ class EditCell: UITableViewCell {
     func setSlices(slice: CarnivalWheel) {
         editLabel.text = slice.title
     }
-    
 }

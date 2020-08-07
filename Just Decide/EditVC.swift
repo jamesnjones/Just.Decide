@@ -42,6 +42,7 @@ class EditVC: UIViewController {
                     self.editSlices = slices
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
+                        
                     }
                    
                 }
@@ -70,9 +71,10 @@ class EditVC: UIViewController {
                 print("Something went wrong")
             }
             self.getSlices()
+            
            
         }
-        alert.addTextField { (alertTextFeild) in
+            alert.addTextField { (alertTextFeild) in
                    alertTextFeild.placeholder = "Create New Option"
                    textField = alertTextFeild
                }
@@ -111,6 +113,7 @@ extension EditVC: UITableViewDataSource, UITableViewDelegate {
             
             guard let error = error else {return}
             print("Successfully removed")
+            
         }
         self.tableView.reloadData()
     }

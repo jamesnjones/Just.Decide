@@ -17,6 +17,8 @@ class SlideInTransition: NSObject, UIViewControllerAnimatedTransitioning {
         return 0.5
     }
     
+    
+    
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         
     guard let toViewController = transitionContext.viewController(forKey: .to),
