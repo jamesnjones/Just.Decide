@@ -27,7 +27,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        
         self.navigationController?.delegate = self
         spinningWheel.initialDrawingOffset = 270.0
         
@@ -37,29 +36,52 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
           super.viewWillAppear(animated)
        
         slices = getSlices()
-        spinningWheel.setNeedsDisplay()
-        spinningWheel.setNeedsLayout()
-          spinningWheel.slices = slices
-                   spinningWheel.equalSlices = true
-                   spinningWheel.frameStroke.width = 1
-                   spinningWheel.titleRotation = CGFloat.pi
-                   spinningWheel.slices.enumerated().forEach { (pair) in
-                       let slice = pair.element as! CarnivalWheel
-                       let offset = pair.offset
-                       switch offset % 6 {
-                       case 0: slice.style = .blue
-                       case 1: slice.style = .green
-                       case 2: slice.style = .grey
-                       case 3: slice.style = .orange
-                       case 4: slice.style = .purple
-                       default: slice.style = .yellow
-                       }
-                  
-                   }
-        
+        updateUI()
+        self.ResultsLabel.text = ""
+       
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        DispatchQueue.main.async {
+        self.spinningWheel.stopAnimating()
+        self.player.stop()
+        }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
     
     
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+      }
+      
+      func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+      }
+    
+    private func updateUI() {
+        spinningWheel.setNeedsDisplay()
+               spinningWheel.setNeedsLayout()
+                 spinningWheel.slices = slices
+                          spinningWheel.equalSlices = true
+                          spinningWheel.frameStroke.width = 1
+                          spinningWheel.titleRotation = CGFloat.pi
+                          spinningWheel.slices.enumerated().forEach { (pair) in
+                              let slice = pair.element as! CarnivalWheel
+                              let offset = pair.offset
+                              switch offset % 6 {
+                              case 0: slice.style = .blue
+                              case 1: slice.style = .purple
+                              case 2: slice.style = .orange
+                              case 3: slice.style = .grey
+                              case 4: slice.style = .green
+                              default: slice.style = .yellow
+                              }
+                         
+                          }
+               
+    }
    private func getSlices() -> [CarnivalWheel] {
         PersistenceManager.retrieveSlices { [weak self] result in
             guard let self = self else {return}
@@ -75,7 +97,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
                     }
                 }
                 
-            case .failure(let error):
+            case .failure:
                 print("Edit VC Errror ")
             }
         }
@@ -85,21 +107,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     }
     
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    
-    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-      }
-      
-      func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-      }
-    
-    
     @IBAction func rotateButton(_ sender: UIButton) {
         if soundIsOn {
         playSound(soundName: "spinning")
+         spin()
+        } else {spin()}
+    }
+    
+    
+    private func spin() {
             ResultsLabel.text = ""
             let randomNumber = Int.random(in: 0...slices.count - 1)
             spinningWheel.startAnimating()
@@ -109,21 +125,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
                     self.ResultsLabel.text = self.spinningWheel.slices[randomNumber].title
                     
                     }
-                }
-        } else {
-            
-        ResultsLabel.text = ""
-        let randomNumber = Int.random(in: 0...slices.count - 1)
-        spinningWheel.startAnimating()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
-            self.spinningWheel.startAnimating(fininshIndex: randomNumber) { (finished) in
-                self.ResultsLabel.text = self.spinningWheel.slices[randomNumber].title
-                
-                }
             }
-        
-        }
     }
     
     func playSound(soundName: String) {

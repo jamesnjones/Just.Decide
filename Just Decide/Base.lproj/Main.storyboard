@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Just Decide-->
+        <!-- Just Decide-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Just_Decide" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Gg-sQ-8zH" userLabel="Spinning Wheel " customClass="TTFortuneWheel" customModule="TTFortuneWheel">
                                 <rect key="frame" x="38.5" y="268.5" width="337" height="337"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.42073411020000001" green="0.4196559098" blue="0.44956282380000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2Gg-sQ-8zH" secondAttribute="height" multiplier="1:1" id="alh-Kx-kCo"/>
                                 </constraints>
@@ -33,7 +33,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="-29" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="SPIN" backgroundImage="spin">
-                                    <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="rotateButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aPS-2l-Tnc"/>
@@ -42,18 +42,18 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7k-Va-za0">
                                 <rect key="frame" x="65" y="767" width="285" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqm-Qv-byG">
-                                <rect key="frame" x="65" y="801" width="74" height="61"/>
+                                <rect key="frame" x="20" y="801" width="74" height="61"/>
                                 <state key="normal" image="soundOn"/>
                                 <connections>
                                     <action selector="soundButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kv1-nY-GBY"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.41960784313725491" green="0.41960784313725491" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="2Gg-sQ-8zH" firstAttribute="centerX" secondItem="E7f-Y9-egk" secondAttribute="centerX" id="6RL-Av-ZKc"/>
                             <constraint firstItem="qyp-d4-f3D" firstAttribute="centerY" secondItem="E7f-Y9-egk" secondAttribute="centerY" constant="-3" id="C9t-OM-UYa"/>
@@ -61,29 +61,29 @@
                             <constraint firstItem="qyp-d4-f3D" firstAttribute="centerX" secondItem="E7f-Y9-egk" secondAttribute="centerX" id="EBb-bQ-hL2"/>
                             <constraint firstItem="2Gg-sQ-8zH" firstAttribute="leading" secondItem="E7f-Y9-egk" secondAttribute="leading" constant="16" id="EGt-qe-Okp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="E7f-Y9-egk" secondAttribute="trailing" constant="3" id="HVI-Oy-ffE"/>
-                            <constraint firstItem="vqm-Qv-byG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="65" id="Lcb-2d-h4d"/>
                             <constraint firstItem="2Gg-sQ-8zH" firstAttribute="centerY" secondItem="E7f-Y9-egk" secondAttribute="centerY" constant="-11" id="NDS-HT-969"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vqm-Qv-byG" secondAttribute="trailing" constant="275" id="SgD-r9-5Z4"/>
+                            <constraint firstItem="vqm-Qv-byG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="RqP-fP-IyX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="h7k-Va-za0" secondAttribute="bottom" constant="95" id="WFK-Fj-mNR"/>
                             <constraint firstItem="vqm-Qv-byG" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Wbj-dR-BoO"/>
                             <constraint firstItem="E7f-Y9-egk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WyI-TA-ALF"/>
                             <constraint firstItem="E7f-Y9-egk" firstAttribute="trailing" secondItem="2Gg-sQ-8zH" secondAttribute="trailing" constant="16" id="eOg-6V-Uct"/>
                             <constraint firstItem="h7k-Va-za0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="65" id="fzL-qm-jTu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vqm-Qv-byG" secondAttribute="trailing" constant="320" id="gP1-TP-xbw"/>
                             <constraint firstItem="E7f-Y9-egk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kCd-ZA-y88"/>
                             <constraint firstItem="vqm-Qv-byG" firstAttribute="top" secondItem="h7k-Va-za0" secondAttribute="bottom" constant="34" id="oAu-K3-quf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h7k-Va-za0" secondAttribute="trailing" constant="64" id="pEn-6C-yp5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Just Decide" id="yjE-lm-pFG">
+                    <navigationItem key="navigationItem" title=" Just Decide" largeTitleDisplayMode="always" id="yjE-lm-pFG">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="line.horizontal.3" catalog="system" id="Pe3-8x-E21">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="menuTapped:" destination="BYZ-38-t0r" id="tmm-az-Bj5"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="L7C-bj-EnH">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="EditButton:" destination="BYZ-38-t0r" id="crv-Ox-vxL"/>
                                 <segue destination="DYY-SN-lBb" kind="show" identifier="" id="Mlr-Vv-Sem"/>
@@ -178,7 +178,8 @@
                         <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kZi-wo-fvt">
                             <rect key="frame" x="0.0" y="137" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                            <state key="normal" title="Share"/>
                             <connections>
                                 <action selector="testButton:" destination="bNO-2G-8iV" eventType="touchUpInside" id="RaI-ux-6Wk"/>
                             </connections>
@@ -246,10 +247,16 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JpD-aw-f4V" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="blackTranslucent" largeTitles="YES" id="bt5-RS-lJr">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="106.5"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.4198753536" green="0.41872608659999999" blue="0.45218819380000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="50"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -38,8 +38,6 @@ class CarnivalWheel: FortuneWheelSliceProtocol, Codable, Hashable {
                case . grey: return TTUtils.uiColor(from: 0xdfe4ea)
                case .orange: return TTUtils.uiColor(from: 0xffbe76)
                case .yellow: return TTUtils.uiColor(from: 0xf6e58d)
-                   
-               default: print("error getting colors")
                }
            }
   

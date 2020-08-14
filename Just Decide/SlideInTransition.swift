@@ -18,7 +18,6 @@ class SlideInTransition: NSObject, UIViewControllerAnimatedTransitioning {
     }
     
     
-    
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         
     guard let toViewController = transitionContext.viewController(forKey: .to),
@@ -49,9 +48,9 @@ class SlideInTransition: NSObject, UIViewControllerAnimatedTransitioning {
             self.dimmingView.alpha = 0.0
             fromViewController.view.transform = .identity
         }
-        let duration = transitionDuration(using: transitionContext)
-        let isCancelled = transitionContext.transitionWasCancelled
-        UIView.animate(withDuration: duration, animations: {
+            let duration = transitionDuration(using: transitionContext)
+            let isCancelled = transitionContext.transitionWasCancelled
+            UIView.animate(withDuration: duration, animations: {
             self.isPresenting ? transform() : identity()
         }) { (_) in
             transitionContext.completeTransition(!isCancelled)

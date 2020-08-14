@@ -35,5 +35,14 @@ class MenuVC: UITableViewController {
 
     @IBAction func testButton(_ sender: UIButton) {
         print(sender.currentTitle)
+        
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        
+        let activityVC = UIActivityViewController(activityItems: [image!], applicationActivities: nil)
+        activityVC.popoverPresentationController?.canOverlapSourceViewRect = true
+        present(activityVC, animated: true, completion: nil)
+    
     }
 }

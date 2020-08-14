@@ -10,25 +10,25 @@ import UIKit
 
 class EditVC: UIViewController {
     
-    
     @IBOutlet weak var tableView: UITableView!
     
     var editSlices: [CarnivalWheel] = []
 
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     
        getSlices()
-        
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
-        
     }
+    
     
    private func getSlices()  {
         PersistenceManager.retrieveSlices { [weak self] result in
@@ -41,14 +41,14 @@ class EditVC: UIViewController {
                 }else {
                     self.editSlices = slices
                     DispatchQueue.main.async {
-                        self.tableView.reloadData()
+                    self.tableView.reloadData()
                         
                     }
                    
                 }
                 
-            case .failure(let error):
-                print("Edit VC Errror ")
+            case .failure:
+                    print("Edit VC Errror ")
             }
         }
     
@@ -60,36 +60,34 @@ class EditVC: UIViewController {
         
         let alert = UIAlertController(title: "Add New Option", message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: "Add Option", style: .default) { (action) in
-            let newSlice = CarnivalWheel(title: textField.text!)
+        let newSlice = CarnivalWheel(title: textField.text!)
             
-            PersistenceManager.updateWith(slice: newSlice, actionType: .add) { [weak self] error in
+        PersistenceManager.updateWith(slice: newSlice, actionType: .add) { [weak self] error in
+                
                 guard let self = self else {return}
                 guard let error = error else {
-               print("Successs")
+                print("Successs")
                     return
                 }
                 print("Something went wrong")
             }
-            self.getSlices()
+                self.getSlices()
             
            
         }
-            alert.addTextField { (alertTextFeild) in
-                   alertTextFeild.placeholder = "Create New Option"
-                   textField = alertTextFeild
-               }
-               alert.addAction(action)
-               
-               present(alert, animated: true, completion: nil)
-        
+            
+        alert.addTextField { (alertTextFeild) in
+        alertTextFeild.placeholder = "Create New Option"
+        textField = alertTextFeild
+        }
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
-
-   
 }
 
 
-
 extension EditVC: UITableViewDataSource, UITableViewDelegate {
+   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return editSlices.count
     }
@@ -100,21 +98,21 @@ extension EditVC: UITableViewDataSource, UITableViewDelegate {
         cell.setSlices(slice: slice)
         
         return cell
-        
     }
     
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {   // swipe to delete
-    guard editingStyle == .delete else {return}
+   
+        guard editingStyle == .delete else {return}
         let slice = editSlices[indexPath.row]
         editSlices.remove(at: indexPath.row)
         
         PersistenceManager.updateWith(slice: slice, actionType: .remove) {[weak self] error in
             guard let self = self else {return}
-            
             guard let error = error else {return}
             print("Successfully removed")
             
         }
-        self.tableView.reloadData()
+            self.tableView.reloadData()
     }
 }
