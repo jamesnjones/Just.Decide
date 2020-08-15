@@ -23,6 +23,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     
     var player: AVAudioPlayer!
     var soundIsOn = true
+    var musicPlaying = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,8 +46,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         super.viewWillDisappear(animated)
         DispatchQueue.main.async {
         self.spinningWheel.stopAnimating()
-        self.player.stop()
+            if self.musicPlaying{
+                self.player.stop()
+            }
         }
+            
     }
     
     override func didReceiveMemoryWarning() {
@@ -108,6 +112,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     
 
     @IBAction func rotateButton(_ sender: UIButton) {
+   
+        if soundIsOn {
+            musicPlaying = true
+        }else {
+            musicPlaying = false
+        }
+        
+        
         if soundIsOn {
         playSound(soundName: "spinning")
          spin()
