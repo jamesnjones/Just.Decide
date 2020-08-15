@@ -28,6 +28,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
        
+       
         self.navigationController?.delegate = self
         spinningWheel.initialDrawingOffset = 270.0
         
@@ -40,6 +41,16 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         updateUI()
         self.ResultsLabel.text = ""
        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+               if slices.isEmpty {
+                   instructions()
+               }else {
+                   return
+               }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -108,6 +119,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     
         return slices
        
+    }
+    
+    func instructions() {
+       
+        let alert = UIAlertController(title: "Hello", message: "Click on the Edit button to add selections", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default)
+        
+        alert.addAction(action)
+        present(alert, animated: true)
     }
     
 
