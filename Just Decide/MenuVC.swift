@@ -33,8 +33,8 @@ class MenuVC: UITableViewController {
         
     }
 
-    @IBAction func testButton(_ sender: UIButton) {
-        print(sender.currentTitle)
+    @IBAction func shareButtonPressed(_ sender: UIButton) {
+        print(sender.currentTitle as Any)
         
         UIGraphicsBeginImageContext(view.frame.size)
         view.layer.render(in: UIGraphicsGetCurrentContext()!)
@@ -45,4 +45,18 @@ class MenuVC: UITableViewController {
         present(activityVC, animated: true, completion: nil)
     
     }
+    
+    @IBAction func PrivacyButtonPressed(_ sender: UIButton) {
+        
+        UIApplication.shared.open(URL(string: "http://www.apple.com")! as URL, options: [:], completionHandler: nil)
+        
+    }
+    
+    @IBAction func reviewButtonPressed(_ sender: UIButton) {
+    }
+    
+    @IBAction func feedbackButtonPressed(_ sender: UIButton) {
+    }
+    
+    
 }

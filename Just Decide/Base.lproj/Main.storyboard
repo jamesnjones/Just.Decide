@@ -174,16 +174,88 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <color key="sectionIndexBackgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kZi-wo-fvt">
-                            <rect key="frame" x="0.0" y="137" width="414" height="44"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="M1k-QI-Sd6">
+                            <rect key="frame" x="0.0" y="137" width="414" height="644"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                            <state key="normal" title="Share"/>
-                            <connections>
-                                <action selector="testButton:" destination="bNO-2G-8iV" eventType="touchUpInside" id="RaI-ux-6Wk"/>
-                            </connections>
-                        </button>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSR-ig-2i7">
+                                    <rect key="frame" x="0.0" y="255" width="414" height="75"/>
+                                    <color key="backgroundColor" red="0.086338959630000003" green="0.086056970060000001" blue="0.094419278199999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="75" id="SLE-xb-8kX"/>
+                                    </constraints>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title="Share"/>
+                                    <connections>
+                                        <action selector="shareButtonPressed:" destination="bNO-2G-8iV" eventType="touchUpInside" id="Njj-hJ-HS3"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AFH-qE-Aib">
+                                    <rect key="frame" x="0.0" y="55" width="414" height="75"/>
+                                    <color key="backgroundColor" red="0.086338959630000003" green="0.086056970060000001" blue="0.094419278199999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="75" id="aWf-kz-wHE"/>
+                                    </constraints>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title="Review"/>
+                                    <connections>
+                                        <action selector="reviewButtonPressed:" destination="bNO-2G-8iV" eventType="touchUpInside" id="2Cr-uL-zS1"/>
+                                        <action selector="shareButtonPressed:" destination="bNO-2G-8iV" eventType="touchUpInside" id="yFk-VL-YTd"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5y-TD-KGC">
+                                    <rect key="frame" x="0.0" y="155" width="414" height="75"/>
+                                    <color key="backgroundColor" red="0.086338959630000003" green="0.086056970060000001" blue="0.094419278199999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="75" id="4vi-9K-Y6m"/>
+                                    </constraints>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title="Feedback"/>
+                                    <connections>
+                                        <action selector="feedbackButtonPressed:" destination="bNO-2G-8iV" eventType="touchUpInside" id="Ghe-yA-VU8"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h29-CW-Bvs">
+                                    <rect key="frame" x="0.0" y="355" width="414" height="75"/>
+                                    <color key="backgroundColor" red="0.086338959630000003" green="0.086056970060000001" blue="0.094419278199999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="75" id="D2K-kQ-liO"/>
+                                    </constraints>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" title="Privacy"/>
+                                    <connections>
+                                        <action selector="PrivacyButtonPressed:" destination="bNO-2G-8iV" eventType="touchUpInside" id="Fh1-wo-gRa"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by James Jones" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGa-PJ-Wym">
+                                    <rect key="frame" x="8" y="615" width="398" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="cmH-qS-sk8"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="h29-CW-Bvs" firstAttribute="leading" secondItem="M1k-QI-Sd6" secondAttribute="leading" id="DBA-oY-e8V"/>
+                                <constraint firstAttribute="trailing" secondItem="T5y-TD-KGC" secondAttribute="trailing" id="DTX-cl-Ppc"/>
+                                <constraint firstItem="iSR-ig-2i7" firstAttribute="leading" secondItem="M1k-QI-Sd6" secondAttribute="leading" id="E56-bE-K1Y"/>
+                                <constraint firstAttribute="trailing" secondItem="AFH-qE-Aib" secondAttribute="trailing" id="FQB-N9-kLA"/>
+                                <constraint firstItem="T5y-TD-KGC" firstAttribute="top" secondItem="AFH-qE-Aib" secondAttribute="bottom" constant="25" id="Gwy-ox-6fa"/>
+                                <constraint firstItem="JGa-PJ-Wym" firstAttribute="top" secondItem="h29-CW-Bvs" secondAttribute="bottom" constant="185" id="HTh-OS-Naz"/>
+                                <constraint firstAttribute="trailing" secondItem="h29-CW-Bvs" secondAttribute="trailing" id="LPh-XO-8hS"/>
+                                <constraint firstItem="AFH-qE-Aib" firstAttribute="top" secondItem="M1k-QI-Sd6" secondAttribute="top" constant="55" id="MaO-Sk-MOs"/>
+                                <constraint firstItem="iSR-ig-2i7" firstAttribute="top" secondItem="T5y-TD-KGC" secondAttribute="bottom" constant="25" id="Y2p-Aa-vyM"/>
+                                <constraint firstAttribute="trailing" secondItem="iSR-ig-2i7" secondAttribute="trailing" id="YlZ-FR-ebC"/>
+                                <constraint firstItem="T5y-TD-KGC" firstAttribute="leading" secondItem="M1k-QI-Sd6" secondAttribute="leading" id="ZnO-vJ-9AG"/>
+                                <constraint firstAttribute="trailing" secondItem="JGa-PJ-Wym" secondAttribute="trailing" constant="8" id="enk-Dl-fiY"/>
+                                <constraint firstItem="AFH-qE-Aib" firstAttribute="leading" secondItem="M1k-QI-Sd6" secondAttribute="leading" id="lOL-Mw-g64"/>
+                                <constraint firstItem="JGa-PJ-Wym" firstAttribute="leading" secondItem="M1k-QI-Sd6" secondAttribute="leading" constant="8" id="rmG-RN-TEG"/>
+                                <constraint firstItem="h29-CW-Bvs" firstAttribute="top" secondItem="iSR-ig-2i7" secondAttribute="bottom" constant="25" id="xxE-aA-qVH"/>
+                            </constraints>
+                        </view>
                         <sections>
                             <tableViewSection id="1ly-Ff-KkJ">
                                 <cells>
@@ -216,6 +288,7 @@
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.070615299049999997" green="0.070484273139999998" blue="0.074657104909999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="ha3-a0-1nN" secondAttribute="trailing" id="Ek2-JI-Qjr"/>
                                                 <constraint firstItem="Ztk-cB-KIs" firstAttribute="centerY" secondItem="hIB-cM-ifV" secondAttribute="centerY" id="PeP-uY-63l"/>
@@ -226,6 +299,7 @@
                                                 <constraint firstItem="hIB-cM-ifV" firstAttribute="centerY" secondItem="9ML-cm-jNf" secondAttribute="centerY" id="ud2-9i-yzP"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.1645345688" green="0.16855844859999999" blue="0.17273068429999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
