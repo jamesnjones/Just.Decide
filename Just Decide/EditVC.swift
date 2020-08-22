@@ -37,7 +37,7 @@ class EditVC: UIViewController {
             switch result {
             case .success(let slices):
                 if slices.isEmpty {
-                    print("this is where i will add an alert or sumin")
+                    print("")
                 }else {
                     self.editSlices = slices
                     DispatchQueue.main.async {
@@ -64,16 +64,14 @@ class EditVC: UIViewController {
             
         PersistenceManager.updateWith(slice: newSlice, actionType: .add) { [weak self] error in
                 
-                guard let self = self else {return}
-                guard let error = error else {
+            guard self != nil else {return}
+            guard error != nil else {
                 print("Successs")
                     return
                 }
                 print("Something went wrong")
             }
                 self.getSlices()
-            
-           
         }
             
         alert.addTextField { (alertTextFeild) in
@@ -108,8 +106,8 @@ extension EditVC: UITableViewDataSource, UITableViewDelegate {
         editSlices.remove(at: indexPath.row)
         
         PersistenceManager.updateWith(slice: slice, actionType: .remove) {[weak self] error in
-            guard let self = self else {return}
-            guard let error = error else {return}
+            guard self != nil else {return}
+            guard error != nil else {return}
             print("Successfully removed")
             
         }

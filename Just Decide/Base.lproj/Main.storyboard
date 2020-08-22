@@ -41,9 +41,11 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7k-Va-za0">
                                 <rect key="frame" x="65" y="767" width="285" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="shadowColor" red="0.070615299049999997" green="0.070484273139999998" blue="0.074657104909999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="1.5" height="-1"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vqm-Qv-byG">
                                 <rect key="frame" x="20" y="801" width="74" height="61"/>
@@ -164,7 +166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FPs-OD-8NJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1863" y="130"/>
+            <point key="canvasLocation" x="1862" y="138"/>
         </scene>
         <!--MenuVC-->
         <scene sceneID="mZF-JP-n2X">
@@ -200,7 +202,6 @@
                                     <state key="normal" title="Review"/>
                                     <connections>
                                         <action selector="reviewButtonPressed:" destination="bNO-2G-8iV" eventType="touchUpInside" id="2Cr-uL-zS1"/>
-                                        <action selector="shareButtonPressed:" destination="bNO-2G-8iV" eventType="touchUpInside" id="yFk-VL-YTd"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5y-TD-KGC">
@@ -233,7 +234,7 @@
                                         <constraint firstAttribute="height" constant="30" id="cmH-qS-sk8"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>

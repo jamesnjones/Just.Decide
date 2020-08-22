@@ -66,13 +66,8 @@ class CarnivalWheel: FortuneWheelSliceProtocol, Codable, Hashable {
         return StrokeInfo(color: UIColor.white, width: 1.0)
     }
     
-    
-    
-    
     convenience init(title: String, degree: CGFloat) {
         self.init(title: title)
         self.degree = degree
     }
-    
-
 }

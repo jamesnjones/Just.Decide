@@ -42,7 +42,7 @@ enum PersistenceManager {
                 completed(save(slices: obtainedSlice))
                 
             case .failure(_):
-                print("Did not work")
+                print("Did not update")
             }
         }
     

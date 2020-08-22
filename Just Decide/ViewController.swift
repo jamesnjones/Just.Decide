@@ -9,6 +9,7 @@
 import UIKit
 import TTFortuneWheel
 import AVFoundation
+import StoreKit
 
 
 class ViewController: UIViewController, UINavigationControllerDelegate {
@@ -25,9 +26,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     var soundIsOn = true
     var musicPlaying = false
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
        
         self.navigationController?.delegate = self
         spinningWheel.initialDrawingOffset = 270.0
@@ -75,6 +76,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
       func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
       }
     
+    
     private func updateUI() {
         spinningWheel.setNeedsDisplay()
                spinningWheel.setNeedsLayout()
@@ -104,7 +106,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
             switch result {
             case .success(let slices):
                 if slices.isEmpty {
-                    print("this is where i will add an alert or sumin")
+                    print("")
                 }else {
                     self.slices = slices
                     DispatchQueue.main.async {
@@ -113,7 +115,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
                 }
                 
             case .failure:
-                print("Edit VC Errror ")
+                print("Edit VC error")
             }
         }
     
@@ -131,7 +133,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     }
     
 
+    func animate() {
+        
+    }
+    
+    
     @IBAction func rotateButton(_ sender: UIButton) {
+        
+        
    
         if soundIsOn {
             musicPlaying = true
@@ -145,7 +154,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
          spin()
         } else {spin()}
     }
-    
     
     private func spin() {
             ResultsLabel.text = ""
