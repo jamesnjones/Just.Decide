@@ -45,9 +45,6 @@ enum PersistenceManager {
                 print("Did not update")
             }
         }
-    
-    
-    
     }
 
 
@@ -65,7 +62,7 @@ enum PersistenceManager {
                        
                    } catch {
                     print(error)
-                   }
+            }
     }
     
 
@@ -80,7 +77,5 @@ enum PersistenceManager {
            } catch {
             return print(error) as? Error
            }
-           return nil
        }
-
 }

@@ -15,9 +15,10 @@ class CarnivalWheel: FortuneWheelSliceProtocol, Codable, Hashable {
         return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
     }
     
-    var hashValue: Int {
-        return ObjectIdentifier(self).hashValue
+   func hash(into hasher: inout Hasher) {
+        hasher.combine(ObjectIdentifier(self))
     }
+
     
     enum Style: String, Codable, Hashable {
              case blue

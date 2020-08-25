@@ -115,7 +115,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
                 }
                 
             case .failure:
-                print("Edit VC error")
+                print("error")
             }
         }
     
@@ -125,8 +125,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     
     func instructions() {
        
-        let alert = UIAlertController(title: "Hello", message: "Click on the Edit button to add selections", preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .default)
+        let alert = UIAlertController(title: "No Choices Yet 🤔", message: "Click on the Edit button to add selections", preferredStyle: .alert)
+        let action = UIAlertAction(title: "👍", style: .default)
         
         alert.addAction(action)
         present(alert, animated: true)
@@ -139,7 +139,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     
     
     @IBAction func rotateButton(_ sender: UIButton) {
-        
+        if slices.count == 0 {
+            return
+        }else {
         
    
         if soundIsOn {
@@ -153,6 +155,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         playSound(soundName: "spinning")
          spin()
         } else {spin()}
+      }
     }
     
     private func spin() {
@@ -162,11 +165,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0) {
                 self.spinningWheel.startAnimating(fininshIndex: randomNumber) { (finished) in
-                    self.ResultsLabel.text = self.spinningWheel.slices[randomNumber].title
+                    self.ResultsLabel.text = "\(self.spinningWheel.slices[randomNumber].title) 🎉"
                     
                     }
             }
     }
+        
     
     func playSound(soundName: String) {
         let url = Bundle.main.url(forResource: soundName, withExtension: ".mp3")
